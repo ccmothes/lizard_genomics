@@ -1,0 +1,236 @@
+reclass,SITE,NAME_SITE,STATE,NAME_STATE,SiteCode7,StateCode7,FNAI_Specific,FNAI_STATE,NOTE
+1,1110,Upland Hardwood Forest,1110,Upland Hardwood Forest,1110000,1100000,Upland Hardwood Forest,Hardwood Forested Uplands,
+1,1111,Dry Upland Hardwood Forest,1110,Upland Hardwood Forest,1111000,1100000,Upland Hardwood Forest,Hardwood Forested Uplands,
+1,1112,Mixed Hardwoods,1110,Upland Hardwood Forest,1112000,1100000,Hardwood Forested Uplands,Hardwood Forested Uplands,FNAI Rollup
+1,1120,Mesic Hammock,1120,Mesic Hammock,1120000,1100000,Mesic Hammock,Hardwood Forested Uplands,
+1,1122,Prairie Mesic Hammock,1120,Mesic Hammock,1122000,1100000,Mesic Hammock,Hardwood Forested Uplands,
+1,1123,Live Oak,1120,Mesic Hammock,1123000,1100000,Hardwood Forested Uplands,Hardwood Forested Uplands,FNAI Rollup
+1,1124,Pine - Mesic Oak,1120,Mesic Hammock,1124000,1100000,Hardwood Forested Uplands,Hardwood Forested Uplands,FNAI Rollup
+1,1125,Cabbage Palm,1120,Mesic Hammock,1125000,1100000,Hardwood Forested Uplands,Hardwood Forested Uplands,FNAI Rollup
+1,1130,Rockland Hammock,1130,Rockland Hammock,1130000,1130000,Rockland Hammock,Rockland Hammock,
+1,1131,Thorn Scrub,1130,Rockland Hammock,1131000,1130000,Rockland Hammock,Rockland Hammock,
+1,1140,Slope Forest,1140,Slope Forest,1140000,1100000,Slope Forest,Hardwood Forested Uplands,
+1,1150,Xeric Hammock,1150,Xeric Hammock,1150000,1100000,Xeric Hammock,Hardwood Forested Uplands,
+1,1200,High Pine and Scrub,1200,High Pine and Scrub,1200000,1200000,SEE NOTE,SEE NOTE,"Many FNAI types possible:  Ruderal, Pine Plantation, Mesic Flatwoods, Upland Pine, Sandhill, other"
+1,1210,Scrub,1210,Scrub,1210000,1210000,Scrub,Scrub,
+1,1211,Oak Scrub,1210,Scrub,1211000,1210000,Scrub,Scrub,
+1,1212,Rosemary Scrub,1210,Scrub,1212000,1210000,Scrub,Scrub,
+1,1213,Sand Pine Scrub,1213,Sand Pine Scrub,1213000,1210000,Scrub,Scrub,
+1,1214,Coastal Scrub,1214,Coastal Scrub,1214000,1210000,Scrub,Scrub,
+1,1220,Upland Mixed Woodland,1200,High Pine and Scrub,1220000,1200000,Upland Mixed Woodland,SEE NOTE,"Crosswalk should be to Upland Mixed Woodland but users of statewide data should be aware that this community is not mapped comprehensively statewide.  Upland Mixed Woodland is likely also classed with other types such as Mixed Upland Hardwood, Upland Hardwood Forest, etc."
+1,1230,Upland Coniferous,1200,High Pine and Scrub,1230000,1200000,SEE NOTE,SEE NOTE,"Many FNAI types possible:  Ruderal, Pine Plantation, Mesic Flatwoods, Upland Pine, Sandhill, other"
+1,1231,Upland Pine,1231,Upland Pine,1231000,1231000,Upland Pine,Upland Pine,
+1,1240,Sandhill,1240,Sandhill,1240000,1240000,Sandhill,Sandhill,
+1,1300,Pine Flatwoods and Dry Prairie,1300,Pine Flatwoods and Dry Prairie,1300000,1311000,Mesic Flatwoods,Mesic Flatwoods,
+1,1310,Dry Flatwoods,1310,Dry Flatwoods,1310000,1311000,Mesic Flatwoods,Mesic Flatwoods,
+1,1311,Mesic Flatwoods,1311,Mesic Flatwoods,1311000,1311000,Mesic Flatwoods,Mesic Flatwoods,
+1,1312,Scrubby Flatwoods,1312,Scrubby Flatwoods,1312000,1312000,Scrubby Flatwoods,Scrubby Flatwoods,
+1,1320,Pine Rockland,1320,Pine Rockland,1320000,1320000,Pine Rockland,Pine Rockland,
+1,1330,Dry Prairie,1330,Dry Prairie,1330000,1330000,Dry Prairie,Dry Prairie,
+1,1340,Palmetto Prairie,1340,Palmetto Prairie,1340000,1311000,Mesic Flatwoods,Mesic Flatwoods,
+1,1400,Mixed Hardwood-Coniferous,1400,Mixed Hardwood-Coniferous,1400000,1400000,SEE NOTE,SEE NOTE,"Many FNAI types possible:  Successional Hardwood Forest, Upland Hardwood Forest, Mesic Hammock, Baygall, other "
+1,1410,Successional Hardwood Forest,1400,Mixed Hardwood-Coniferous,1410000,1400000,Successional Hardwood Forest,Successional Hardwood Forest,
+1,1500,Shrub and Brushland,1500,Shrub and Brushland,1500000,1500000,SEE NOTE,SEE NOTE,"Many FNAI types possible:  Ruderal, Mesic Flatwoods (treeless), Scrub, other"
+1,1510,Other Shrubs and Brush,1500,Shrub and Brushland,1510000,1500000,SEE NOTE,SEE NOTE,"Many FNAI types possible:  Ruderal, Mesic Flatwoods (treeless), Scrub, other"
+2,1600,Coastal Uplands,1600,Coastal Uplands,1600000,1600000,Coastal Uplands,Coastal Uplands,FNAI Rollup
+2,1610,Beach Dune,1600,Coastal Uplands,1610000,1610000,Beach Dune,Beach Dune/Coastal Grassland,
+2,1620,Coastal Berm,1600,Coastal Uplands,1620000,1600000,Coastal Berm,Coastal Uplands,
+2,1630,Coastal Grassland,1600,Coastal Uplands,1630000,1610000,Coastal Grassland,Beach Dune/Coastal Grassland,
+2,1640,Coastal Strand,1640,Coastal Strand,1640000,1640000,Coastal Strand,Coastal Strand,
+2,1650,Maritime Hammock,1650,Maritime Hammock,1650000,1650000,Maritime Hammock,Maritime Hammock,
+2,1660,Shell Mound,1600,Coastal Uplands,1660000,1650000,Shell Mound,Shell Mound,
+2,1670,Sand Beach (Dry),1670,Sand Beach (Dry),1670000,1670000,Sand Beach,Sand Beach,The FNAI system refers to sand beach as 'Unconsolidated Substrate'.  We recommend that users retain the Sand Beach class.
+3,1710,Sinkhole,1700,Barren and Outcrop Communities,1710000,1700000,Sinkhole,Sinkholes and Outcrop Communities,
+3,1720,Upland Glade,1720,Upland Glade,1720000,1720000,Upland Glade,Upland Glade,
+3,1740,Keys Cactus Barren,1700,Barren and Outcrop Communities,1740000,1700000,Keys Cactus Barren,Keys Cactus Barren,
+3,1750,Bare Soil,1700,Barren and Outcrop Communities,1750000,,Ruderal,Ruderal,
+3,1760,Exposed Rock,1700,Barren and Outcrop Communities,1760000,,Ruderal,Ruderal,
+5,1800,Cultural - Terrestrial,1800,Cultural - Terrestrial,1800000,,Ruderal,Ruderal,
+4,1810,Mowed Grass,1800,Cultural - Terrestrial,1810000,,Developed,Ruderal,
+4,1811,Vegetative Berm,1800,Cultural - Terrestrial,1811000,1821000,Developed,Ruderal,
+4,1812,Highway Rights of Way,1800,Cultural - Terrestrial,1812000,,Developed,Ruderal,
+4,1821,Low Intensity Urban,1821,Low Intensity Urban,1821000,1821000,Developed,Ruderal,
+5,18211,Urban Open Land,1821,Low Intensity Urban,1821100,1821000,Ruderal,Ruderal,
+5,182111,Urban Open Forested,1821,Low Intensity Urban,1821110,1821000,Ruderal,Ruderal,
+5,182112,Urban Open Pine,1821,Low Intensity Urban,1821120,1821000,Ruderal,Ruderal,
+4,18212,"Residential, Low Density",1821,Low Intensity Urban,1821200,1821000,Developed,Ruderal,
+4,18213,Grass,1821,Low Intensity Urban,1821300,,Developed,Ruderal,
+6,182131,Parks and Zoos,1821,Low Intensity Urban,1821310,1821000,Developed,Ruderal,
+6,182132,Golf courses,1821,Low Intensity Urban,1821320,1821000,Developed,Ruderal,
+6,182133,Ballfields,1821,Low Intensity Urban,1821330,,Developed,Ruderal,
+6,182134,Cemeteries,1821,Low Intensity Urban,1821340,,Developed,Ruderal,
+6,182135,Community rec. facilities,1821,Low Intensity Urban,1821350,1821000,Developed,Ruderal,
+5,18214,Trees,1821,Low Intensity Urban,1821400,,Ruderal,Ruderal,
+4,1822,High Intensity Urban,1822,High Intensity Urban,1822000,1822000,Developed,Ruderal,
+4,18221,"Residential, Med. Density - 2-5 Dwelling Units/AC",1822,High Intensity Urban,1822100,1822000,Developed,Ruderal,
+4,18222,"Residential, High Density > 5 Dwelling Units/AC",1822,High Intensity Urban,1822200,1822000,Developed,Ruderal,
+4,18223,Commercial and Services,1822,High Intensity Urban,1822300,1822000,Developed,Ruderal,
+4,18224,Industrial,1822,High Intensity Urban,1822400,1822000,Developed,Ruderal,
+4,18225,Institutional,1822,High Intensity Urban,1822500,1822000,Developed,Ruderal,
+5,1830,Rural,1830,Rural,1830000,1830000,Ruderal,Ruderal,
+5,1831,Rural Open,1830,Rural,1831000,1830000,Ruderal,Ruderal,
+5,18311,Rural Open Forested,1830,Rural,1831100,1830000,Ruderal,Ruderal,
+5,183111,Oak - Cabbage Palm Forests,1830,Rural,1831110,1830000,Ruderal,Ruderal,
+5,18312,Rural Open Pine,1830,Rural,1831200,1830000,Ruderal,Ruderal,
+5,1832,Rural Structures,1830,Rural,1832000,1830000,Ruderal,Ruderal,
+7,1833,Agriculture,1830,Rural,1833000,1833000,Agriculture,Ruderal,
+7,18331,Cropland/Pasture,18331,Cropland/Pasture,1833100,1833000,Agriculture,Ruderal,
+7,183311,Row Crops,18331,Cropland/Pasture,1833110,1833000,Agriculture,Ruderal,
+7,183312,Field Crops,18331,Cropland/Pasture,1833120,1833000,Agriculture,Ruderal,
+7,1833121,Sugarcane,1833121,Sugarcane,1833121,1833000,Agriculture,Ruderal,
+7,183313,Improved Pasture,1821,Low Intensity Urban,1833130,1833000,Improved Pasture,Improved Pasture,
+7,183314,Unimproved/Woodland Pasture,1830,Rural,1833140,1830000,Semi-improved Pasture,Semi-improved Pasture,
+7,183315,Other Open Lands - Rural,18331,Cropland/Pasture,1833150,1833000,Agriculture,Ruderal,
+7,1833151,Fallow Cropland,18331,Cropland/Pasture,1833151,1833000,Agriculture,Ruderal,
+7,18332,Orchards/Groves,18332,Orchards/Groves,1833200,1833000,Agriculture,Ruderal,
+7,183321,Citrus,18332,Orchards/Groves,1833210,1833000,Agriculture,Ruderal,
+7,183322,Fruit Orchards,18332,Orchards/Groves,1833220,1833000,Agriculture,Ruderal,
+7,183323,Pecan,18332,Orchards/Groves,1833230,1833000,Agriculture,Ruderal,
+7,183324,Fallow Orchards,18332,Orchards/Groves,1833240,1833000,Agriculture,Ruderal,
+7,18333,Tree Plantations,18333,Tree Plantations,1833300,1823000,Pine Plantation,Ruderal,
+7,183331,Hardwood Plantations,18333,Tree Plantations,1833310,1823000,Agriculture,Ruderal,
+7,183332,Coniferous Plantations,18333,Tree Plantations,1833320,1823000,Pine Plantation,Pine Plantation,
+7,18334,Vineyard and Nurseries,18334,Vineyard and Nurseries,1833400,1833000,Agriculture,Ruderal,
+7,183341,Tree Nurseries,18334,Vineyard and Nurseries,1833410,1833000,Agriculture,Ruderal,
+7,183342,Sod Farms,18334,Vineyard and Nurseries,1833420,1833000,Agriculture,Ruderal,
+7,183343,Ornamentals,18334,Vineyard and Nurseries,1833430,1833000,Agriculture,Ruderal,
+7,183344,Vineyards,18334,Vineyard and Nurseries,1833440,1833000,Agriculture,Ruderal,
+7,183345,Floriculture,18334,Vineyard and Nurseries,1833450,1833000,Agriculture,Ruderal,
+7,18335,Other Agriculture,18335,Other Agriculture,1833500,1833000,Agriculture,Ruderal,
+7,183351,Feeding Operations,18335,Other Agriculture,1833510,1833000,Agriculture,Ruderal,
+7,183352,Specialty Farms,18335,Other Agriculture,1833520,1833000,Agriculture,Ruderal,
+8,1840,Transportation,1840,Transportation,1840000,1840000,Developed,Ruderal,
+8,1841,Roads,1840,Transportation,1841000,1840000,Road,Ruderal,
+8,1842,Rails,1840,Transportation,1842000,1840000,Developed,Ruderal,
+8,1850,Communication,1850,Communication,1850000,1850000,Developed,Ruderal,
+8,1860,Utilities,1860,Utilities,1860000,1860000,Utility Corridor,Ruderal,
+9,1870,Extractive,1870,Extractive,1870000,1870000,Developed,Ruderal,
+9,1871,Strip Mines,1870,Extractive,1871000,1870000,Developed,Ruderal,
+9,1872,Sand & Gravel Pits,1870,Extractive,1872000,1870000,Borrow Area,Ruderal,
+9,1873,Rock Quarries,1870,Extractive,1873000,1870000,Borrow Area,Ruderal,
+9,1874,Oil & Gas Fields,1870,Extractive,1874000,1870000,Developed,Ruderal,
+9,1875,Reclaimed Lands,1870,Extractive,1875000,1870000,Ruderal,Ruderal,
+9,1876,Abandoned Mining Lands,1870,Extractive,1876000,1870000,Ruderal,Ruderal,
+9,1877,Spoil Area,1870,Extractive,1877000,1870000,Spoil Area,Ruderal,
+7,1880,Bare Soil/Clear Cut,1880,Bare Soil/Clear Cut,1880000,,Clearcut Pine Plantation,Ruderal,
+10,2100,Freshwater Non-Forested Wetlands,2100,Freshwater Non-Forested Wetlands,2100000,2100000,Freshwater Non-Forested Wetlands,Freshwater Non-Forested Wetlands,FNAI Rollup
+10,2110,Prairies and Bogs,2110,Prairies and Bogs,2110000,,Prairies and Bogs,Prairies and Bogs,FNAI Rollup
+10,2111,Wet Prairie,2110,Prairies and Bogs,2111000,2110000,Wet Prairie,Prairies and Bogs,
+10,21111,Wiregrass Savanna,2110,Prairies and Bogs,2111100,,Wet Prairie,Prairies and Bogs,
+10,21112,Cutthroat Seep,2110,Prairies and Bogs,2111200,2110000,Wet Prairie,Prairies and Bogs,
+10,2112,Mixed Scrub-Shrub Wetland,2110,Prairies and Bogs,2112000,2110000,SEE NOTE,SEE NOTE,"Many FNAI types possible:  Basin Swamp, Dome Swamp, Shrub Bog, Baygall, Wet Prairie, Wet Flatwoods, other"
+10,21121,Shrub Bog,2110,Prairies and Bogs,2112100,2110000,Shrub Bog,Prairies and Bogs,
+10,2113,Marl Prairie,2110,Prairies and Bogs,2113000,2110000,Marl Prairie,Prairies and Bogs,
+10,2114,Seepage Slope,2110,Prairies and Bogs,2114000,2110000,Seepage Slope,Prairies and Bogs,
+10,2120,Marshes,2120,Marshes,2120000,2120000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,2121,Isolated Freshwater Marsh,2121,Isolated Freshwater Marsh,2121000,2120000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,21211,Depression Marsh,2121,Isolated Freshwater Marsh,2121100,2120000,Depression Marsh,Freshwater Marshes,
+10,21212,Basin Marsh,2121,Isolated Freshwater Marsh,2121200,2120000,Basin Marsh,Freshwater Marshes,
+10,2122,Coastal Interdunal Swale,2120,Marshes,2122000,2122000,Coastal Interdunal Swale,Freshwater Marshes,
+10,2123,Floodplain Marsh,2123,Floodplain Marsh,2123000,2120000,Floodplain Marsh,Floodplain Marsh,
+10,21231,Freshwater Tidal Marsh,2123,Floodplain Marsh,2123100,2120000,Floodplain Marsh,Floodplain Marsh,
+10,2124,Slough Marsh,2120,Marshes,2124000,2120000,Slough Marsh,Freshwater Marshes,
+10,2125,Glades Marsh,2120,Marshes,2125000,2120000,Glades Marsh,Freshwater Marshes,
+10,2130,Marshes (Continued),2120,Marshes,2130000,,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,2131,Sawgrass,2120,Marshes,2131000,2120000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,2140,Floating/Emergent Aquatic Vegetation,2100,Freshwater Non-Forested Wetlands,2140000,2100000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,2141,Slough,2100,Freshwater Non-Forested Wetlands,2141000,2100000,Slough,Freshwater Marshes,
+10,2142,Water Lettuce,2100,Freshwater Non-Forested Wetlands,2142000,2100000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,2145,Duck Weed,2100,Freshwater Non-Forested Wetlands,2145000,2100000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,2146,Water Lily,2100,Freshwater Non-Forested Wetlands,2146000,2100000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+10,2150,Submergent Aquatic Vegetation,2100,Freshwater Non-Forested Wetlands,2150000,2100000,Freshwater Marshes,Freshwater Marshes,FNAI Rollup
+11,2200,Freshwater Forested Wetlands,2200,Freshwater Forested Wetlands,2200000,2220000,Freshwater Forested Wetlands,Freshwater Forested Wetlands,FNAI Rollup
+11,2210,Cypress/Tupelo(incl Cy/Tu mixed),2210,Cypress/Tupelo(incl Cy/Tu mixed),2210000,2210000,Cypress/Tupelo,Cypress/Tupelo,FNAI Rollup
+11,2211,Cypress,2211,Cypress,2211000,2210000,Cypress/Tupelo,Cypress/Tupelo,FNAI Rollup
+11,2212,Tupelo,2210,Cypress/Tupelo(incl Cy/Tu mixed),2212000,2210000,Cypress/Tupelo,Cypress/Tupelo,FNAI Rollup
+11,2213,Isolated Freshwater Swamp,2213,Isolated Freshwater Swamp,2213000,2210000,Cypress/Tupelo,Cypress/Tupelo,FNAI Rollup
+11,22131,Dome Swamp,22131,Dome Swamp,2213100,2210000,Dome Swamp,Cypress/Tupelo,
+11,221312,Gum Pond,22131,Dome Swamp,2213120,2210000,Dome Swamp,Cypress/Tupelo,
+11,22132,Basin Swamp,22132,Basin Swamp,2213200,2210000,Basin Swamp,Cypress/Tupelo,
+11,2214,Strand Swamp,2214,Strand Swamp,2214000,2210000,Strand Swamp,Cypress/Tupelo,
+11,2215,Floodplain Swamp,2215,Floodplain Swamp,2215000,2210000,Floodplain Swamp,Cypress/Tupelo,
+11,22151,Freshwater Tidal Swamp,2215,Floodplain Swamp,2215100,2210000,Floodplain Swamp,Cypress/Tupelo,
+11,2220,Other Coniferous Wetlands,2220,Other Coniferous Wetlands,2220000,2220000,Freshwater Forested Wetlands,Freshwater Forested Wetlands,FNAI Rollup
+11,2221,Wet Flatwoods,2221,Wet Flatwoods,2221000,2221000,Wet Flatwoods,Wet Flatwoods,
+11,22211,Hydric Pine Flatwoods,2221,Wet Flatwoods,2221100,2221000,Wet Flatwoods,Wet Flatwoods,
+11,222111,Cutthroat Grass Flatwoods,2221,Wet Flatwoods,2221110,2221000,Wet Flatwoods,Wet Flatwoods,
+11,222112,Cabbage Palm Flatwoods,2221,Wet Flatwoods,2221120,2221000,Wet Flatwoods,Wet Flatwoods,
+11,22212,Hydric Pine Savanna,2221,Wet Flatwoods,2221200,2221000,Wet Flatwoods,Wet Flatwoods,
+11,2222,Pond Pine,2220,Other Coniferous Wetlands,2222000,2221000,Wet Flatwoods,Wet Flatwoods,
+11,2230,Other Hardwood Wetlands,2230,Other Hardwood Wetlands,2230000,2230000,Mixed Hardwood Wetlands,Mixed Hardwood Wetlands,FNAI Rollup
+11,2231,Baygall,2231,Baygall,2231000,2230000,Baygall,Mixed Hardwood Wetlands,
+11,22311,Bay Swamp,2231,Baygall,2231100,2230000,Baygall,Mixed Hardwood Wetlands,
+11,22312,South Florida Bayhead,2231,Baygall,2231200,2230000,Baygall,Mixed Hardwood Wetlands,
+11,2232,Hydric Hammock,2232,Hydric Hammock,2232000,2230000,Hydric Hammock,Mixed Hardwood Wetlands,
+11,22321,Coastal Hydric Hammock,2232,Hydric Hammock,2232100,2230000,Hydric Hammock,Mixed Hardwood Wetlands,
+11,22322,Prairie Hydric Hammock,2232,Hydric Hammock,2232200,2230000,Hydric Hammock,Mixed Hardwood Wetlands,
+11,22323,Cabbage Palm Hammock,2232,Hydric Hammock,2232300,2230000,Hydric Hammock,Mixed Hardwood Wetlands,
+11,2233,Mixed Wetland Hardwoods,2200,Freshwater Forested Wetlands,2233000,2230000,SEE NOTE,Mixed Hardwood Wetlands,"Many FNAI types possible:  Basin Swamp, Dome Swamp, Baygall, Floodplain Swamp, other  (almost any freshwater forested wetland type)"
+11,22331,Bottomland Forest,2200,Freshwater Forested Wetlands,2233100,2230000,Bottomland Forest,Mixed Hardwood Wetlands,
+11,22332,Alluvial Forest,2200,Freshwater Forested Wetlands,2233200,2230000,Alluvial Forest,Mixed Hardwood Wetlands,
+11,2234,Titi Swamp,2230,Other Hardwood Wetlands,2234000,2230000,Baygall,Mixed Hardwood Wetlands,
+11,2240,Other Wetland Forested Mixed,2200,Freshwater Forested Wetlands,2240000,2240000,Freshwater Forested Wetlands,Freshwater Forested Wetlands,FNAI Rollup
+11,2241,Cypress/Hardwood Swamps,2200,Freshwater Forested Wetlands,2241000,2240000,Freshwater Forested Wetlands,Freshwater Forested Wetlands,FNAI Rollup
+11,2242,Cypress/Pine/Cabbage Palm,2200,Freshwater Forested Wetlands,2242000,2240000,Freshwater Forested Wetlands,Freshwater Forested Wetlands,FNAI Rollup
+11,2300,Non-vegetated Wetland,2300,Non-vegetated Wetland,2300000,2300000,SEE NOTE,SEE NOTE,"Many FNAI types possible.  If adjacent to another wetland type it is reasonable to assign it as that type.  In some parts of the state these may be intermittently inundated versions of adjacent wetlands, or shorelines of adjacent wetlands or ponds."
+12,2400,Cultural - Palustrine,2400,Cultural - Palustrine,2400000,2400000,Ruderal,Ruderal,
+12,2410,Impounded Marsh,2400,Cultural - Palustrine,2410000,2400000,Impoundment,Ruderal,
+12,2420,Impounded Swamp,2400,Cultural - Palustrine,2420000,2400000,Impoundment,Ruderal,
+12,2430,Grazed Wetlands,2400,Cultural - Palustrine,2430000,2400000,Ruderal,Ruderal,
+12,2440,Clearcut Wetland,2400,Cultural - Palustrine,2440000,2400000,Clearing/regeneration,Ruderal,
+12,2450,Wet Coniferous Plantations,2400,Cultural - Palustrine,2450000,2450000,Pine Plantation,Pine Plantation,
+13,3000,Lacustrine,3000,Lacustrine,3000000,3100000,Natural Lakes & Ponds,Natural Lakes & Ponds,FNAI Rollup
+13,3100,Natural Lakes and Ponds,3100,Natural Lakes and Ponds,3100000,3100000,Natural Lakes & Ponds,Natural Lakes & Ponds,FNAI Rollup
+13,3110,Limnetic,3100,Natural Lakes and Ponds,3110000,3100000,Natural Lakes & Ponds,Natural Lakes & Ponds,FNAI Rollup
+13,3111,Clastic Upland Lake,3100,Natural Lakes and Ponds,3111000,3100000,Clastic Upland Lake,Natural Lakes & Ponds,
+13,3112,Coastal Dune Lake,3100,Natural Lakes and Ponds,3112000,3100000,Coastal Dune Lake,Natural Lakes & Ponds,
+13,3113,Flatwoods/Prairie/Marsh Lake,3100,Natural Lakes and Ponds,3113000,3100000,Flatwoods/Prairie/Marsh Lake,Natural Lakes & Ponds,
+13,3114,River Floodplain Lake/Swamp Lake,3100,Natural Lakes and Ponds,3114000,3100000,River Floodplain Lake/Swamp Lake,Natural Lakes & Ponds,
+13,3115,Sinkhole Lake,3100,Natural Lakes and Ponds,3115000,3100000,Sinkhole Lake,Natural Lakes & Ponds,
+13,3116,Coastal Rockland Lake,3100,Natural Lakes and Ponds,3116000,3100000,Coastal Rockland Lake,Natural Lakes & Ponds,
+13,3117,Sandhill Lake,3100,Natural Lakes and Ponds,3117000,3100000,Sandhill Lake,Natural Lakes & Ponds,
+13,3118,Major Springs,3100,Natural Lakes and Ponds,3118000,3100000,Major Springs,Natural Lakes & Ponds,
+13,3120,Littoral,3100,Natural Lakes and Ponds,3120000,3100000,Natural Lakes & Ponds,Natural Lakes & Ponds,FNAI Rollup
+14,3200,Cultural - Lacustrine,3200,Cultural - Lacustrine,3200000,3200000,Artificial Pond,Ruderal,
+14,3210,Artificial/Farm Pond,3200,Cultural - Lacustrine,3210000,3200000,Artificial Pond,Ruderal,
+14,3211,Aquacultural Ponds,3200,Cultural - Lacustrine,3211000,3200000,Artificial Pond,Ruderal,
+14,3220,Artificial Impoundment/Reservoir,3200,Cultural - Lacustrine,3220000,3200000,Impoundment,Ruderal,
+14,3230,Quarry Pond,3200,Cultural - Lacustrine,3230000,3200000,Artificial Pond,Ruderal,
+14,3240,Sewage Treatment Pond,3200,Cultural - Lacustrine,3240000,3200000,Artificial Pond,Ruderal,
+14,3250,Stormwater Treatment Areas,3200,Cultural - Lacustrine,3250000,3200000,Artificial Pond,Ruderal,
+14,3260,Industrial Cooling Pond,3200,Cultural - Lacustrine,3260000,3200000,Artificial Pond,Ruderal,
+15,4000,Riverine,4000,Riverine,4000000,4100000,Natural Rivers & Streams,Natural Rivers & Streams,FNAI Rollup 
+15,4100,Natural Rivers and Streams,4100,Natural Rivers and Streams,4100000,4100000,Natural Rivers & Streams,Natural Rivers & Streams,FNAI Rollup
+15,4110,Alluvial Stream,4100,Natural Rivers and Streams,4110000,4100000,Alluvial Stream,Natural Rivers & Streams,
+15,4120,Blackwater Stream,4100,Natural Rivers and Streams,4120000,4100000,Blackwater Stream,Natural Rivers & Streams,
+15,4130,Spring-run Stream,4100,Natural Rivers and Streams,4130000,4100000,Spring Run Stream,Natural Rivers & Streams,
+15,4140,Seepage Stream,4100,Natural Rivers and Streams,4140000,4100000,Seepage Stream,Natural Rivers & Streams,
+15,4160,Tidally-influenced Stream,4100,Natural Rivers and Streams,4160000,4100000,Tidally-influenced Stream,Natural Rivers & Streams,
+15,4170,Riverine Sandbar,4100,Natural Rivers and Streams,4170000,4100000,Riverine Sandbar,Natural Rivers & Streams,No direct match in the FNAI system; could be result of natural riverine processes or dredge spoil.  We recommend that users include as part of the adjacent riverine class or retain the Riverine Sandbar designation.
+16,4200,Cultural - Riverine,4200,Cultural - Riverine,4200000,4200000,Canal/Ditch,Ruderal,
+16,4210,Canal,4200,Cultural - Riverine,4210000,4200000,Canal/Ditch,Ruderal,
+16,4220,Ditch/Artificial Intermittent Stream,4200,Cultural - Riverine,4220000,4200000,Canal/Ditch,Ruderal,
+17,5000,Estuarine,5000,Estuarine,5000000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,5100,Subtidal,5000,Estuarine,5100000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,5200,Intertidal,5000,Estuarine,5200000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,5210,Exposed Limestone,5000,Estuarine,5210000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,52111,Keys Tidal Rock Barren,52111,Keys Tidal Rock Barren,5211100,5211100,Keys Tidal Rock Barren,Keys Tidal Rock Barren,
+17,5212,Non-vegetated,5000,Estuarine,5212000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,5220,Tidal Flat,5220,Tidal Flat,5220000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,5221,Mud,5220,Tidal Flat,5221000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,5222,Sand,5220,Tidal Flat,5222000,5000000,Estuarine,Estuarine,FNAI Rollup
+17,5230,Oyster Bar,5000,Estuarine,5230000,5000000,Mollusk Reef,Estuarine,
+18,5240,Salt Marsh,5240,Salt Marsh,5240000,5240000,Salt Marsh,Salt Marsh,
+18,5250,Mangrove Swamp,5250,Mangrove Swamp,5250000,5250000,Mangrove Swamp,Mangrove Swamp,
+18,5251,Buttonwood Forest,5250,Mangrove Swamp,5251000,5250000,Mangrove Swamp,Mangrove Swamp,
+18,5252,Scrub Mangrove,5252,Scrub Mangrove,5252000,5250000,Mangrove Swamp,Mangrove Swamp,
+16,5310,Estuarine Ditch/Channel,5300,Cultural - Estuarine,5310000,5000000,Canal/Ditch,Ruderal,
+16,5320,Estuarine Artificial Impoundment,5300,Cultural - Estuarine,5320000,5000000,Impoundment,Ruderal,
+19,6000,Marine,6000,Marine,6000000,6000000,Marine,Marine,FNAI Rollup
+19,6100,Surf Zone,6000,Marine,6100000,6000000,Marine,Marine,FNAI Rollup
+20,7000,Exotic Plants,7000,Exotic Plants,7000000,7000000,Invasive Exotic Monoculture,Invasive Exotic Monoculture,
+20,7100,Australian Pine,7000,Exotic Plants,7100000,7000000,Invasive Exotic Monoculture,Invasive Exotic Monoculture,
+20,7200,Melaleuca,7000,Exotic Plants,7200000,7000000,Invasive Exotic Monoculture,Invasive Exotic Monoculture,
+20,7300,Brazilian Pepper,7000,Exotic Plants,7300000,7000000,Invasive Exotic Monoculture,Invasive Exotic Monoculture,
+20,7400,Exotic Wetland Hardwoods,7000,Exotic Plants,7400000,7000000,Invasive Exotic Monoculture,Invasive Exotic Monoculture,
+NA,9100,Unconsolidated Substrate,9100,Unconsolidated Substrate,9100000,5000000,Unconsolidated Substrate,Unconsolidated Substrate,
