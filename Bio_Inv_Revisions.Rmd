@@ -115,10 +115,11 @@ ag_lc <- ag_thin_sf %>%
   st_drop_geometry() %>% 
   count(NAME_STATE) %>% 
   # these calculations from Table 3 Metrics spreadsheet (from Chris)
-  mutate(ag_percent = n/sum(n)*100,
-         ag_point_estimate = (n+2)/(sum(n)+4),
-         ag_L95 = ag_point_estimate-1.96*sqrt((ag_point_estimate*(1-ag_point_estimate))/(sum(n)+4)),
-         ag_U95 = ag_point_estimate+1.96*sqrt((ag_point_estimate*(1-ag_point_estimate))/(sum(n)+4)))
+  mutate(percent = n/sum(n)*100,
+         point_estimate = (n+2)/(sum(n)+4),
+         L95 = point_estimate-1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         U95 = point_estimate+1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         species = "Agama")
 
 
 ```
@@ -183,10 +184,11 @@ bas_lc <- bas_thin_sf %>%
   left_join(reclass, by = c("landcover" = "SITE")) %>% 
   st_drop_geometry() %>% 
   count(NAME_STATE) %>% 
-  mutate(bas_percent = n/sum(n)*100,
-         bas_point_estimate = (n+2)/(sum(n)+4),
-         bas_L95 = bas_point_estimate-1.96*sqrt((bas_point_estimate*(1-bas_point_estimate))/(sum(n)+4)),
-         bas_U95 = bas_point_estimate+1.96*sqrt((bas_point_estimate*(1-bas_point_estimate))/(sum(n)+4)))
+  mutate(percent = n/sum(n)*100,
+         point_estimate = (n+2)/(sum(n)+4),
+         L95 = point_estimate-1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         U95 = point_estimate+1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         species = "Basilisk")
 
 
 ```
@@ -196,20 +198,29 @@ bas_lc <- bas_thin_sf %>%
 ### Join datasets
 
 ```{r}
-land_ass <- full_join(bas_lc, ag_lc, by = "NAME_STATE") %>% 
-  rename(bas_n = n.x, ag_n = n.y) %>% 
-  replace(is.na(.), 0) %>% 
-  #remove cover types with < 10 occ for both species
-  filter(bas_n >= 10 | ag_n >= 10) 
+land_assoc <- bind_rows(ag_lc, bas_lc) %>% 
+  filter(n >= 10) %>% 
+  # filter to categories that have more than 10 for both species
+  group_by(NAME_STATE) %>% 
+  mutate(n_cats = n()) %>% 
+  filter(n_cats > 1) %>% 
+  ungroup() %>% 
+  select(-n_cats)
+  
 ```
 
 ### Contingency Analysis
 
 ```{r}
 
-land_ass %>% 
+full_join(bas_lc, ag_lc, by = "NAME_STATE") %>%
+  rename(bas_n = n.x, ag_n = n.y) %>%
+  replace(is.na(.), 0) %>%
+  #remove cover types with < 10 occ for both species
+  filter(bas_n >= 10 | ag_n >= 10) %>% 
   column_to_rownames(var = "NAME_STATE") %>% select(bas_n, ag_n) %>% 
-  chisq.test(.)
+  chisq.test(.) 
+
 #X-squared = 58.196, df = 8, p-value = 1.052e-09
 
 
@@ -218,19 +229,18 @@ land_ass %>%
 ### CI Analysis and Visual
 
 ```{r}
-## confident interval analysis
+## confidence interval analysis
 
-ci <- land_ass # finish cleaning here
-  
   
 #assess CI overlap
-ci <- ggplot(aes(x = species, y = point_estimate, color = species))+
+land_assoc %>% 
+ggplot(aes(x = species, y = point_estimate, color = species))+
   geom_point(size = 4)+
-  geom_errorbar(aes(ymin = lower_ci, ymax = upper_ci))+
+  geom_errorbar(aes(ymin = L95, ymax = U95))+
   scale_color_manual(name = "Species", values = c("blue", "red"))+
   ylab("Probability of Occurence")+
   theme_bw()+
-  facet_wrap(~ land_cover_type, nrow = 1, strip.position = "bottom")+
+  facet_wrap(~ NAME_STATE, nrow = 1, strip.position = "bottom")+
   theme(axis.text.x = element_blank(),
         axis.title.x = element_blank(),
         axis.ticks.x = element_blank(),
