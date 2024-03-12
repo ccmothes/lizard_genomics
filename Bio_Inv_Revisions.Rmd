@@ -14,6 +14,7 @@ library(sf)
 library(mapview)
 library(spThin)
 library(spdep)
+library(adegenet)
 ```
 
 # Read in Data
@@ -63,12 +64,12 @@ bas_combined <- bind_rows(bas_all, bas_pts) %>% distinct(LONG, LAT) %>%
 ```{r}
 ## thin points (increasing thin.par as needed)
 ag_thin <- thin(ag_combined, lat.col = "LAT", long.col = "LONG", spec.col = "species",
-                thin.par = 0.25,
+                thin.par = 0.2,
                 reps = 50, write.files = FALSE, locs.thinned.list.return = TRUE)
 
 
 ## test for autocorrelation with join counts test, using last df
-ag_thin_sf <- ag_thin[[50]] %>%
+ag_thin_sf <- ag_thin[[1]] %>%
   st_as_sf(coords = c("Longitude", "Latitude"), crs = 4326) %>% 
   st_transform(crs = st_crs(land_reclass))
 ```
@@ -84,7 +85,7 @@ r_ag2 <- rasterize(ag_thin_sf, r_ag, field = 1)
 r_ag2[is.na(r_ag2)] <- 0
 
 # check how many points were lost to rasterization at slightly larger res
-freq(r_ag2) # none
+freq(r_ag2) # two, n = 406
 ```
 
 ## Run Join Counts Tests
@@ -103,7 +104,54 @@ ag_jc_perm <- joincount.mc(as.factor(values(r_ag2)), lwb, nsim = 999, alternativ
 
 
 ag_jc
+# 	Join count test under nonfree sampling
+# 
+# data:  as.factor(values(r_ag2)) 
+# weights: lwb 
+# 
+# Std. deviate for 0 = -0.14703, p-value = 0.5584
+# alternative hypothesis: greater
+# sample estimates:
+# Same colour statistic           Expectation              Variance 
+#          8.537650e+05          8.537653e+05          3.248657e+00 
+# 
+# 
+# 	Join count test under nonfree sampling
+# 
+# data:  as.factor(values(r_ag2)) 
+# weights: lwb 
+# 
+# Std. deviate for 1 = -0.87636, p-value = 0.8096
+# alternative hypothesis: greater
+# sample estimates:
+# Same colour statistic           Expectation              Variance 
+#             0.0000000             0.7665537             0.7651036 
+
 ag_jc_perm
+# Monte-Carlo simulation of join-count statistic
+# 
+# data:  as.factor(values(r_ag2)) 
+# weights: lwb 
+# number of simulations + 1: 1000 
+# 
+# Join-count statistic for 0 = 853765, rank of observed statistic = 485.5, p-value = 0.5145
+# alternative hypothesis: greater
+# sample estimates:
+#     mean of simulation variance of simulation 
+#           8.537652e+05           2.909942e+00 
+# 
+# 
+# 	Monte-Carlo simulation of join-count statistic
+# 
+# data:  as.factor(values(r_ag2)) 
+# weights: lwb 
+# number of simulations + 1: 1000 
+# 
+# Join-count statistic for 1 = 0, rank of observed statistic = 235.5, p-value = 0.7645
+# alternative hypothesis: greater
+# sample estimates:
+#     mean of simulation variance of simulation 
+#              0.7717718              0.7634909 
 ```
 
 ## Recalculate LC Metrics
@@ -119,6 +167,9 @@ ag_lc <- ag_thin_sf %>%
          point_estimate = (n+2)/(sum(n)+4),
          L95 = point_estimate-1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
          U95 = point_estimate+1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         # calculate 83% intervals to appease reviewer
+         L83 = point_estimate-1.38*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         U83 = point_estimate+1.38*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
          species = "Agama")
 
 
@@ -131,12 +182,12 @@ ag_lc <- ag_thin_sf %>%
 ```{r}
 ## thin points (increasing thin.par as needed)
 bas_thin <- thin(bas_combined, lat.col = "LAT", long.col = "LONG", spec.col = "species",
-                thin.par = 0.25,
+                thin.par = 0.15,
                 reps = 50, write.files = FALSE, locs.thinned.list.return = TRUE)
 
 
 ## test for autocorrelation with join counts test, using last df
-bas_thin_sf <- bas_thin[[50]] %>%
+bas_thin_sf <- bas_thin[[1]] %>%
   st_as_sf(coords = c("Longitude", "Latitude"), crs = 4326) %>% 
   st_transform(crs = st_crs(land_reclass))
 
@@ -153,7 +204,7 @@ r_bas2 <- rasterize(bas_thin_sf, r_bas, field = 1)
 r_bas2[is.na(r_bas2)] <- 0
 
 # check how many points were lost to rasterization at slightly larger res
-freq(r_bas2) # only 2
+freq(r_bas2) # only 3, n = 311
 
 ```
 
@@ -173,7 +224,55 @@ bas_jc_perm <- joincount.mc(as.factor(values(r_bas2)), lwb, nsim = 999, alternat
 
 
 bas_jc
+# Join count test under nonfree sampling
+# 
+# data:  as.factor(values(r_bas2)) 
+# weights: lwb 
+# 
+# Std. deviate for 0 = 1.2204, p-value = 0.1111
+# alternative hypothesis: greater
+# sample estimates:
+# Same colour statistic           Expectation              Variance 
+#          6.307360e+05          6.307339e+05          2.903259e+00 
+# 
+# 
+# 	Join count test under nonfree sampling
+# 
+# data:  as.factor(values(r_bas2)) 
+# weights: lwb 
+# 
+# Std. deviate for 1 = 1.7871, p-value = 0.03696
+# alternative hypothesis: greater
+# sample estimates:
+# Same colour statistic           Expectation              Variance 
+#             2.0000000             0.6079493             0.6067576 
+
 bas_jc_perm
+# Monte-Carlo simulation of join-count statistic
+# 
+# data:  as.factor(values(r_bas2)) 
+# weights: lwb 
+# number of simulations + 1: 1000 
+# 
+# Join-count statistic for 0 = 630736, rank of observed statistic = 864.5, p-value = 0.1355
+# alternative hypothesis: greater
+# sample estimates:
+#     mean of simulation variance of simulation 
+#           6.307339e+05           2.969003e+00 
+# 
+# 
+# 	Monte-Carlo simulation of join-count statistic
+# 
+# data:  as.factor(values(r_bas2)) 
+# weights: lwb 
+# number of simulations + 1: 1000 
+# 
+# Join-count statistic for 1 = 2, rank of observed statistic = 916.5, p-value = 0.0835
+# alternative hypothesis: greater
+# sample estimates:
+#     mean of simulation variance of simulation 
+#              0.6396396              0.6275253 
+
 ```
 
 ## Recalc LC Metrics
@@ -188,7 +287,12 @@ bas_lc <- bas_thin_sf %>%
          point_estimate = (n+2)/(sum(n)+4),
          L95 = point_estimate-1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
          U95 = point_estimate+1.96*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         # calculate 83% intervals to appease reviewer
+         L83 = point_estimate-1.38*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
+         U83 = point_estimate+1.38*sqrt((point_estimate*(1-point_estimate))/(sum(n)+4)),
          species = "Basilisk")
+
+
 
 
 ```
@@ -221,9 +325,9 @@ full_join(bas_lc, ag_lc, by = "NAME_STATE") %>%
   column_to_rownames(var = "NAME_STATE") %>% select(bas_n, ag_n) %>% 
   chisq.test(.) 
 
-#X-squared = 58.196, df = 8, p-value = 1.052e-09
+#X-squared = 74.387, df = 8, p-value = 6.542e-13
 
-
+ 
 ```
 
 ### CI Analysis and Visual
@@ -233,16 +337,102 @@ full_join(bas_lc, ag_lc, by = "NAME_STATE") %>%
 
   
 #assess CI overlap
-land_assoc %>% 
-ggplot(aes(x = species, y = point_estimate, color = species))+
-  geom_point(size = 4)+
-  geom_errorbar(aes(ymin = L95, ymax = U95))+
-  scale_color_manual(name = "Species", values = c("blue", "red"))+
-  ylab("Probability of Occurence")+
-  theme_bw()+
-  facet_wrap(~ NAME_STATE, nrow = 1, strip.position = "bottom")+
-  theme(axis.text.x = element_blank(),
-        axis.title.x = element_blank(),
-        axis.ticks.x = element_blank(),
-        legend.position = "bottom")
+land_assoc %>%
+  # Add asterisk to sig diff. Nothes that cropland/pasture was only significant with 83% CI
+  mutate(NAME_STATE = if_else(
+    NAME_STATE %in% c("Cropland/Pasture", "High Intensity Urban"),
+    paste0(NAME_STATE, "*"),
+    NAME_STATE
+  )) %>%
+  ggplot(aes(x = species, y = point_estimate, color = species)) +
+  geom_point(size = 4) +
+  geom_errorbar(aes(ymin = L95, ymax = U95)) +
+  scale_color_manual(name = "Species", values = c("blue", "red")) +
+  ylab("Probability of Occurence") +
+  theme_bw() +
+  facet_wrap( ~ NAME_STATE, nrow = 1, strip.position = "bottom") +
+  theme(
+    axis.text.x = element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    legend.position = "bottom"
+  )
+```
+
+# Figure 1 updates
+
+```{r}
+# create basemap of urbanization and make points smaller and transparent
+
+```
+
+# sPCA Figure Updates
+
+```{r}
+load("data/agama_spca2eig.RData")
+load("data/agama_genind.RData")
+
+colorplot.spca(mySpca, transp = TRUE)
+
+showBauges()
+colorplot(mySpca$other$xy, rupica.spca1$ls, axes=1:2, transp=TRUE, add=TRUE,
+cex=3)
+title("sPCA - colorplot of PC 1 and 2\n(lagged scores)", col.main="yellow",
+      line=-2, cex=2)
+
+```
+
+# Figure 7 Updates
+
+```{r}
+# https://rpubs.com/camerynbrock/963528 
+
+library(rnaturalearth)
+
+# read in resistance layer
+canopy <- terra::rast("data/canopy.asc")
+
+# read in basemap
+basemap_sf <- ne_countries(
+  continent = "North America",
+  scale = "medium", 
+  returnclass = "sf") %>% 
+  dplyr::select(1) %>% 
+  st_transform(crs = crs(canpoy))
+
+colors <- colorRampPalette(
+  colors = c("#85c1c8", "#af4980", "#c0182a", "#d33300", "#e99900", 
+             "#ffff00"),
+  bias = 0.25)
+
+plot(canopy, col = colors(100))
+
+```
+
+# Intro History Map Updates
+
+Add original basilisk site to 197# map
+
+```{r}
+# read in 
+
+```
+
+# Kinship
+
+```{r}
+ag_kinship <- read_csv("data/agama_kinshipPlink.csv") %>% 
+  select(-1) %>% 
+  as.matrix()
+
+max(ag_kinship[lower.tri(ag_kinship)]) # row 13, col 41
+# read in site metadata
+site_meta <- read_csv("data/collection_sites_updated.csv")
+
+# map the ones with the highest kinship
+site_meta %>% 
+  slice(c(13, 41)) %>% 
+  st_as_sf(coords = c("LONG", "LAT"), crs = 4326) %>% 
+  mapview()
 ```
