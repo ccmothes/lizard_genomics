@@ -1,0 +1,98 @@
+DATE,TIME,LOCATION,LAT,LONG,ID,SPECIES,SEX,SUBSTRATE TYPE,SUBSTRATE TEMP,PERCH HEIGHT (cm),PERCH WIDTH (cm),WEIGHT (g),SVL (mm),OTHER SP. PRESENT,NOTES
+5/23/2018,0.432638889,UM,25.721,-80.27889,AG001,Agama,F,woodchips,31.2,0,,51.29,110.62,"Sagrei, cristatellus, carolinensis, distichus,",
+5/30/2018,9:15,UM,25.71944,-80.27778,AG002,Agama,F,Tree,,42,,29.46,89.3,,
+10/30/2018,0.916666667,FTBG,25.676386,-80.27559,AG003,Agama,Juv,,,,,21.5,79.35,,
+11/2/2018,0.833333333,Vizcaya,25.74381,-80.21187,AG009,Agama,,,,,,,,,
+12/19/2018,0.524305556,Ingram Park,25.706213,-80.260724,AG010,Agama,F,Concrete by canal,,,,12.58,70.8,,
+12/19/2018,0.541666667,Red Road Canal,25.67382,-80.28421,AG011,Agama,Juv,Tree by canal,,,,3.32,49.9,,
+2/9/2019,0.5625,Chapman Park,25.64529,-80.29227,AG012,Agama,M,Brick/limestone wall,,1.5,,87.28,136.5,,
+2/9/2019,0.618055556,184th St,25.59919,-80.34032,AG013,Agama,F,Brick Wall,,1,,,,,Tail clip sample
+2/15/2019,0.513888889,Rock Ridge Park,25.66771,-80.38433,AG014,Agama,M,Limestone Rock,,0,,80.02,149.43,,Ticks
+2/15/2019,0.541666667,Ben Gamla Charter School,25.66498,-80.37402,AG015,Agama,M,Palm Tree,,2,,74.86,126.05,,
+2/20/2019,0.5,24th St near Tamiami Park,25.74824,-80.3206,AG016,Agama,F,Small Palm by road,,1m,,47.49,116.93,,
+2/23/2019,,Road by Modello Wayside Park,25.49978,-80.44944,AG017,Agama,M,Road (hit by car),,,,,,,Madison caught
+2/24/2019,0.447916667,Metro Path/Campus,25.70878,-80.28421,AG018,Agama,F,Palm Tree,,2,,22.34,84.4,,
+2/28/2019,0.416666667,Coral Gables City Hall,25.74894,-80.26372,AG019,Agama,F,Palm tree,,,,36.54,99.58,,
+2/28/2019,0.489583333,Dadeland by Busway,25.68203,-80.31642,AG020,Agama,M,Tree,,3,,93.47,133.83,,
+3/11/2019,0.454861111,152 St/Pizza Hut,25.62905,-80.34014,AG021,Agama,F,Tree by road,,1,,,,,
+3/12/2019,11:22,Cutler Ridge Park,25.57815,-80.35262,AG022,Agama,F,Tree,,1,,24.17,86.81,,
+3/12/2019,12:56,Redland Elementary,25.53694,-80.45355,AG023,Agama,F,Limestone wall,,,,51.14,104.72,,
+3/14/2019,11:24,Robert is here,25.44759,-80.50227,AG024,Agama,F,Wall,,,,42.46,97.1,,
+3/14/2019,12:49,Falsuo Park,25.44095,-80.49154,AG025,Agama,M,Tree,,2,,84.66,134.91,,
+3/21/2019,12:00,Park by Deering,25.61121,-80.30729,AG026,Agama,F,Limestone rock,,,,47.52,108.02,,
+3/17/2019,,Homestead,25.49073,-80.46165,AG027,Agama,F,,,,,25.95,88.24,,
+3/30/2019,11:30,Walgreens at 152 St/ 157 Ave,25.62654,-80.44726,AG028,Agama,Juv,Shopping Sign,,,,2.21,42.46,,
+3/30/2019,13:08,177 Ave/248 St,25.53657,-80.47858,AG029,Agama,F,Street light,,,,,,,TAIL CLIP
+3/24/2019,,Homestead,25.47892,-80.43917,AG030,Agama,M,,,,,92.78,131.2,,Madison caught
+4/11/2019,9:45,Naranja Park,25.52132,-80.42139,AG031,Agama,F,,,,,22.89,90.59,,
+4/11/2019,10:50,Palmland Park,25.48520,-80.43891,AG032,Agama,F,,,,,37.73,104.41,,
+4/25/2019,13:08,Leisure Lake,25.49503,-80.43275,AG033,Agama,F,Tree,,,,35.93,102.7,,
+5/4/2019,14:40,"Seminole Wayside Park, Homestead",25.49039,-80.45477,AG034,Agama,F,Tree,,,,,,,Ryn caught (with Madison)
+6/26/2019,12:55,Harris Field,25.47524,-80.46213,AG035,Agama,M,Tree,,,,116.7,145.7,,"Hunter caught, Leyna Recorded "
+7/2/2019,9:16,Fuch's Park,25.69605,-80.299,AG036,Agama,M,Tree,,,,99.9,145.2,,Leyna
+7/17/2019,9:15,Howard Drive Elementary School (Limestone wall nearby),25.64612,-80.31794,AG037,Agama,M,limestone wall,,,,75.75,128.5,,Leyna
+7/17/2019,10:17,"Southland Mall, Regal parking lot",25.57654,-80.36697,AG038,Agama,M,ground/bush,,,,66.38,145.3,,Julian (by hand)
+7/17/2019,10:42,Marathon gas station by Monkey Jungle,25.56601,-80.42893,AG039,Agama,F,concrete ground,,,,37.15,107.3,,Leyna
+7/18/2019,9:20,South Dade Park,25.50621,-80.45552,AG040,Agama,Juv,mulch,,,,6.97,57.5,,Theresa
+7/18/2019,10:45,"Railroad, 216th St",25.56551,-80.46403,AG041,Agama,Juv,dirt pile,,,,67.16,130.7,,Theresa
+7/22/2019,10:43,Miccosukee Golf Course,25.71140,-80.41696,AG042,Agama,Juv,Rock,,,,2.13,27.8,,Jaclyn caught
+7/24/2019,11:08,Redland Fruit and Spice Park,25.53507,-80.49349,AG043,Agama,F,Ground,,,,24.08,87.5,,Matt caught
+7/31/2019,10:01,Matheson Hammock Park,25.67939,-80.25682,AG044,Agama,Juv,Wall,,,,2.01,38.2,,Theresa caught
+9/6/2019,21:45,Schnebly's winery,25.48538,-80.54075,AG045,Agama,Juv,rocks,,,,1.83,41.79,,Kristin caught with Madison
+5/2/2019,1:25:00 PM,Homestead library,25.47547,-80.46651,AG046,Agama,M,,,,,,,,Madison caught
+,,Zoo Miami,25.61010,-80.39702,AG047,Agama,,,,,,,,,Samples from Tina at BioTech
+,,Princeton,25.53316,-80.40754,AG048,Agama,,,,,,,,,"Samples from Tina's student; #'s 7, 8, 9, 10, 11"
+,,Zoo Miami,25.61392,-80.40058,AG049,Agama,,,,,,,,,Agama from Steven
+,,,25.52316,-80.46785,AG050,Agama,M,,,,,,,,Madison caught
+6/28/2018,0.475,FTBG,25.67833,-80.275,BV002,Basilisk,F,Rock by water,,,,77.28,132.75,,
+7/31/2018,0.505555556,57th Ave Canal,25.68417,-80.28444,BV009,Basilisk,F,Waterside (tree),,,,,,"Iguana, cristatellus, sagrei, carolinensis",
+8/7/2018,0.403472222,AD Barnes Park,25.73946,-80.30803,BV010,Basilisk,F,grass,,,,28.43,93.75,"iguana, distichus",
+9/1/2018,0.402777778,Tropical Park,25.72167,-80.32583,BV015,Basilisk,F,Tree,,1.5,0.33,37.53,106,,
+9/1/2018,0.467361111,FIU,25.75374,-80.38053,BV019,Basilisk,Juv,waterside,,,,1.38,40.5,,
+12/2/2018,,Robert King High Park,25.77381,-80.30873,BV021,Basilisk,Juv,Shrub,,1m,,7.95,73.51,,
+12/13/2018,0.625,Red Road Canal,25.67417,-80.28389,BV022,Basilisk,F,Ground,,0m,,13.19,76.71,,
+2/15/2019,0.604166667,72 ST/ 821 Canal,25.70202,-80.38422,BV023,Basilisk,Juv,Grass by canal,,0,,9.66,70.36,,
+2/20/2019,0.541666667,Tamiami Park,25.74688,-80.37618,BV024,Basilisk,Juv,Limestone rock by canal,,,,4.74,58.3,,
+2/20/2019,0.558333333,Tree Island Park,25.74671,-80.43027,BV025,Basilisk,Juv,On road by canal,,,,2.98,48.45,,
+2/20/2019,0.572916667,The Pit BBQ,25.76034,-80.4618,BV026,Basilisk,F,Vegetation,,0.5,,36.29,111.28,,
+2/20/2019,0.583333333, Krome Ave Canal,25.76086,-80.49772,BV027,Basilisk,Juv,Veg by canal,,,,6.18,62.62,,
+1/18/2019,0.5625,Bill Sadowski Park,25.60880,-80.31977,BV028,Basilisk,Juv,Vegetation/Rock,,0.5,,10.07,73.8,,
+2/22/2019,0.529861111,Matheson Canal,25.66440,-80.27697,BV029,Basilisk,F,Canal,,,,31.85,102.08,,
+2/22/2019,0.546527778,Coral Pine Park Canal,25.67431,-80.30927,BV030,Basilisk,Juv,Canal/concrete,,,,2.44,49.98,,
+2/22/2019,0.5625,St.Louis Covenant School Canal,25.65976,-80.31029,BV031,Basilisk,Juv,Sidewalk by canal,,,,2.18,50.04,,
+2/23/2019,0.604166667,Lake Mahar,25.77681,-80.30671,BV032,Basilisk,M,Mangrove by water,,,,8.62,81.34,,
+2/23/2019,0.625,Blue Lagoon,25.78344,-80.28069,BV033,Basilisk,Juv,Tree by water,,,,7.31,68.32,,
+2/23/2019,0.65625,Northwest Dr. Canal,25.77225,-80.31473,BV034,Basilisk,Juv,Grass by canal,,,,5.92,67.02,,
+2/23/2019,0.666666667,826 Canal,25.79368,-80.32066,BV035,Basilisk,Juv,Concrete by canal,,,,8.92,72.01,,
+2/24/2019,0.529166667,By snapper creek park,25.69753,-80.35782,BV036,Basilisk,Juv,Veg by canal,,,,6.17,65.09,,
+2/28/2019,0.5,64th St canal,25.71113,-80.29938,BV037,Basilisk,M,Veg by canal,,,,14.66,84.3,,
+3/12/2019,10:40,By Lakes by the Bay,25.56399,-80.3317,BV038,Basilisk,F,Canal,,,,57.34,129.01,,
+3/12/2019,11:54,Black Point Park,25.54042,-80.32801,BV039,Basilisk,F,Mangrove,,,,58.15,122.23,,
+3/14/2019,12:03,Canal/Ingram highway ENP,25.40815,-80.52384,BV040,Basilisk,F,Grass by canal,,,,31.68,103.75,,
+3/14/2019,13:05,Card Sound USGS,25.43340,-80.47297,BV041,Basilisk,F,Vegetation,,,,37.12,107.78,,
+3/21/2019,13:02,Coral Reef Park,25.62982,-80.31763,BV042,Basilisk,M,Vegetation by canal,,,,9.08,66.95,,
+4/8/2019,14:30,Toys R Us/ 117 Ave,25.68811,-80.38339,BV043,Basilisk,M,grass,,,,26.5,93.69,,
+4/11/2019,10:15,Mandarin Lakes K-8 Academy (by homestead airbase),25.50678,-80.38891,BV044,Basilisk,M,,,,,8.91,84.56,,
+4/18/2019,12:05,Ludlam Rd Canal in Doral,25.83191,-80.3059,BV045,Basilisk,F,,,,,26.82,99.42,,
+4/23/2019,12:55,42 st/ 162 Ave,25.72788,-80.456,BV046,Basilisk,M,Plant by canal,,,,25.75,97.71,,
+4/23/2019,13:23,Micosukee Golf Course,25.70753,-80.42919,BV047,Basilisk,F,tree stump,,,,16.56,85.35,,
+4/25/2019,12:30,William Randolph,25.55510,-80.38379,BV048,Basilisk,F,grass,,,,50.08,119.41,,
+4/25/2019,14:00,Old Cutler Canal (south),25.55901,-80.35938692,BV049,Basilisk,F,Bush trunk,,,,41.62,112.83,,
+5/4/2019,12:35,Canal 111 near ENP,25.40767,-80.52364,BV050,Basilisk,F,Leaf litter underneath low trees,,0,,,,,Madison caught
+7/3/2019,9:30,Fuch's Park,25.69421,-80.29701,BV051,Basilisk,F,ground,,,,,,,Leyna
+7/3/2019,10:12,Thalatta estate park,25.61005,-80.30936,BV052,Basilisk,M,wood chips,,,,,,,Leyna
+7/3/2019,11:48,Homestead Bayfront county park,25.46197,-80.33669,BV053,Basilisk,M,sand,,,,,,,Jaclyn
+7/3/2019,12:14,Canal near BNP,25.46312,-80.34657,BV054,Basilisk,F,tree branch,,,,,,,Jaclyn/Julian
+7/5/2019,11:07,Amelia Earhart,25.88334,-80.27086,BV055,Basilisk,F,tree branch,,,,45.3,124.2,,"Matt caught, Leyna Entered"
+7/5/2019,12:59,Greynolds Park,25.93971,-80.15319,BV056,Basilisk,F,tree branch,,,,41.32,123.9,,"Jacyln, Leyna entered"
+7/16/2019,11:30,Homestead Sports Complex,25.45177,-80.42557,BV057,Basilisk,F,rock,,,,33.99,107.1,,Jaclyn
+7/16/2019,1:20,Vizcaya,25.74328,-80.21112,BV058,Basilisk,Juv,Limestone fountain,,,,3.35,51.3,,Jaclyn
+7/22/2019,10:03,Miccosukee Golf Course,25.70971,-80.42108,BV059,Basilisk,M,Rock,,,,107.97,147.1,,Matt caught
+7/23/2019,10:29,SW 107th canal,25.60856,-80.51236,BV060,Basilisk,M,Limestone rock,,,,129.28,157.1,,Leyna caught
+7/24/2019,10:16,130th Canal,25.63485,-80.49743,BV061,Basilisk,Juv (F?),Limestone rock,,,,48.22,118.5,,Matt caught
+9/12/2019,23:14,,25.51864,-80.34729,BV062,Basilisk,M,plant,,,,12.3,76.86,,
+9/12/2019,20:45,,25.48978,-80.34914,BV063,Basilisk,Juv,metal fence,,,,1.39,38.9,,BV063:BV070 same site
+7/5/2019,11:25,Canal,25.40778,-80.52367,BV071,Basilisk,Juv,"Ground, leaves/rocks",,,,,,,
+7/5/2019,12:30,Canal,25.28977,-80.44535,BV072,Basilisk,F,leaf litter,,,,,,,
+7/19/2019,10:05,Canal,25.40407,-80.5587,BV074,Basilisk,F,Large rock,,,,,,,
+,,Zoo Miami,25.60451,-80.39698,BV075,Basilisk,F,,,,,,,,Basilisk from Steven
