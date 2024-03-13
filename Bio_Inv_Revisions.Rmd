@@ -350,7 +350,7 @@ land_assoc %>%
       NAME_STATE
     ),
     # rename cultural - riverine to Canal/Ditch)
-    NAME_STATE = if_else(NAME_STATE == "Cultural - Riverine", "Canal/Ditch", NAME_STATE)
+    NAME_STATE = if_else(str_detect(NAME_STATE, "Riverine"), "Canal/Ditch", NAME_STATE)
   ) %>%
   ggplot(aes(x = species, y = point_estimate, color = species)) +
   geom_point(size = 4) +
