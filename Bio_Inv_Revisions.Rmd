@@ -303,13 +303,17 @@ bas_lc <- bas_thin_sf %>%
 
 ```{r}
 land_assoc <- bind_rows(ag_lc, bas_lc) %>% 
-  filter(n >= 10) %>% 
-  # filter to categories that have more than 10 for both species
   group_by(NAME_STATE) %>% 
-  mutate(n_cats = n()) %>% 
-  filter(n_cats > 1) %>% 
-  ungroup() %>% 
-  select(-n_cats)
+  mutate(sum_obs = sum(n)) %>% 
+  filter(sum_obs > 10)  %>% 
+  # remove marshes and terrestrial, both less than 10
+  filter(!NAME_STATE %in% c("Cultural - Terrestrial", "Marshes"))
+  # filter to categories that have more than 10 for at least one species
+  # group_by(NAME_STATE) %>% 
+  # mutate(n_cats = n()) %>% 
+  # filter(n_cats > 1) %>% 
+  # ungroup() %>% 
+  # select(-n_cats)
   
 ```
 
@@ -338,19 +342,23 @@ full_join(bas_lc, ag_lc, by = "NAME_STATE") %>%
   
 #assess CI overlap
 land_assoc %>%
-  # Add asterisk to sig diff. Nothes that cropland/pasture was only significant with 83% CI
-  mutate(NAME_STATE = if_else(
-    NAME_STATE %in% c("Cropland/Pasture", "High Intensity Urban"),
-    paste0(NAME_STATE, "*"),
-    NAME_STATE
-  )) %>%
+  # Add asterisk to sig diff. based on 83% CI
+  mutate(
+    NAME_STATE = if_else(
+      !NAME_STATE %in% c("Transportation", "Low Intensity Urban"),
+      paste0(NAME_STATE, "*"),
+      NAME_STATE
+    ),
+    # rename cultural - riverine to Canal/Ditch)
+    NAME_STATE = if_else(NAME_STATE == "Cultural - Riverine", "Canal/Ditch", NAME_STATE)
+  ) %>%
   ggplot(aes(x = species, y = point_estimate, color = species)) +
   geom_point(size = 4) +
   geom_errorbar(aes(ymin = L95, ymax = U95)) +
   scale_color_manual(name = "Species", values = c("blue", "red")) +
   ylab("Probability of Occurence") +
   theme_bw() +
-  facet_wrap( ~ NAME_STATE, nrow = 1, strip.position = "bottom") +
+  facet_wrap(~ NAME_STATE, nrow = 1, strip.position = "bottom") +
   theme(
     axis.text.x = element_blank(),
     axis.title.x = element_blank(),
