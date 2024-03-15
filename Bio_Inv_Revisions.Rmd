@@ -350,20 +350,26 @@ land_assoc %>%
       NAME_STATE
     ),
     # rename cultural - riverine to Canal/Ditch)
-    NAME_STATE = if_else(str_detect(NAME_STATE, "Riverine"), "Canal/Ditch", NAME_STATE)
+    NAME_STATE = case_when(str_detect(NAME_STATE, "Riverine") ~ "Canal/Ditch*", 
+                           str_detect(NAME_STATE, "Cropland") ~ "Cropland/ Pasture*",
+                           str_detect(NAME_STATE, "Prairies") ~ "Prairies/ Bogs*",
+                           str_detect(NAME_STATE, "Nurseries") ~ "Vineyard/ Nurseries*",
+                           .default = NAME_STATE)
   ) %>%
   ggplot(aes(x = species, y = point_estimate, color = species)) +
-  geom_point(size = 4) +
+  geom_point(size = 6) +
   geom_errorbar(aes(ymin = L95, ymax = U95)) +
   scale_color_manual(name = "Species", values = c("blue", "red")) +
   ylab("Probability of Occurence") +
   theme_bw() +
-  facet_wrap(~ NAME_STATE, nrow = 1, strip.position = "bottom") +
+  facet_wrap(~ NAME_STATE, nrow = 1, strip.position = "bottom", labeller = labeller(NAME_STATE = label_wrap_gen(10))) +
   theme(
     axis.text.x = element_blank(),
     axis.title.x = element_blank(),
     axis.ticks.x = element_blank(),
     panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    text = element_text(size = 18),
     legend.position = "bottom"
   )
 ```
@@ -371,8 +377,40 @@ land_assoc %>%
 # Figure 1 updates
 
 ```{r}
+library(tmap)
 # create basemap of urbanization and make points smaller and transparent
 
+# combine basilisk and agama points
+sites <- agama_pts %>% mutate(species = "Agama") %>% 
+  bind_rows(mutate(bas_pts, species = "Basilisk")) %>% 
+  st_as_sf(coords = c("LONG", "LAT"), crs = 4326)
+
+#create raster of urbanization
+urbanization <- land_reclass
+urbanization[urbanization == 4] <- 100
+urbanization[urbanization == 6] <- 200
+urbanization[!urbanization %in% c(100,200)] <- NA
+
+qtm(urbanization)
+
+# read in MDC layer
+mdc <- read_sf("data/MDC_land_boundary.shp")
+
+tm_shape(mdc) +
+  tm_borders() +
+  tm_shape(urbanization) +
+  tm_raster(style = "cat", palette = c("orange", "lightyellow"),
+            labels= c("High Intensity Urban", "Low Intensity Urban")) +
+  tm_shape(sites) +
+  tm_symbols(
+    shape = "species",
+    fill = "species",
+    #shapes = c(21, 22),
+    palette = c("blue", "red"),
+    size = 0.5,
+    alpha = 0.5,
+    
+  )
 ```
 
 # sPCA Figure Updates
