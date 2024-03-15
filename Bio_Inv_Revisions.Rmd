@@ -378,12 +378,17 @@ land_assoc %>%
 
 ```{r}
 library(tmap)
+library(basemaps)
 # create basemap of urbanization and make points smaller and transparent
 
 # combine basilisk and agama points
-sites <- agama_pts %>% mutate(species = "Agama") %>% 
-  bind_rows(mutate(bas_pts, species = "Basilisk")) %>% 
+sites <- bas_pts %>% mutate(species = "Basilisk") %>% 
+  bind_rows(mutate(agama_pts, species = "Agama")) %>% 
+  #remove basilisk outlier
+  slice(-48) %>% 
   st_as_sf(coords = c("LONG", "LAT"), crs = 4326)
+
+mapview(sites)
 
 #create raster of urbanization
 urbanization <- land_reclass
@@ -396,21 +401,37 @@ qtm(urbanization)
 # read in MDC layer
 mdc <- read_sf("data/MDC_land_boundary.shp")
 
-tm_shape(mdc) +
+# set basemap
+set_defaults(map_service = "esri", map_type = "world_imagery")
+bgbox <-  st_bbox(st_buffer(sites, 5000)) %>% st_as_sfc()
+bg <- basemap_stars(bgbox) #process basemap into a raster
+
+tm_shape(bg) +
+  tm_rgb() +
+  tm_shape(mdc) +
   tm_borders() +
-  tm_shape(urbanization) +
-  tm_raster(style = "cat", palette = c("orange", "lightyellow"),
-            labels= c("High Intensity Urban", "Low Intensity Urban")) +
+  #tm_shape(urbanization) +
+  # tm_raster(
+  #   style = "cat",
+  #   palette = c("orange", "#f7ef4f"),
+  #   labels = c("High Intensity Urban", "Low Intensity Urban"),
+  #   alpha = 0.75
+  # ) +
   tm_shape(sites) +
-  tm_symbols(
+  tm_dots(
     shape = "species",
-    fill = "species",
-    #shapes = c(21, 22),
-    palette = c("blue", "red"),
-    size = 0.5,
-    alpha = 0.5,
-    
-  )
+    col = "species",
+    border.col = "black",
+    shapes = c(24, 22),
+    palette = c("red", "blue"),
+    size = 1,
+    alpha = 0.75
+    #legend.show = FALSE
+  ) +
+  tm_layout(legend.show = FALSE) +
+  tm_compass(type = "arrow", position = c(.90, .05), text.color = "white") +
+  tm_scale_bar(position = c(0.58, .005), text.size = .8, text.color = "white")
+
 ```
 
 # sPCA Figure Updates
@@ -425,7 +446,7 @@ showBauges()
 colorplot(mySpca$other$xy, rupica.spca1$ls, axes=1:2, transp=TRUE, add=TRUE,
 cex=3)
 title("sPCA - colorplot of PC 1 and 2\n(lagged scores)", col.main="yellow",
-      line=-2, cex=2)
+      line=-2, cex=2) 
 
 ```
 
@@ -434,10 +455,11 @@ title("sPCA - colorplot of PC 1 and 2\n(lagged scores)", col.main="yellow",
 ```{r}
 # https://rpubs.com/camerynbrock/963528 
 
-library(rnaturalearth)
+library(rnaturalearth) 
 
 # read in resistance layer
 canopy <- terra::rast("data/canopy.asc")
+crs(canopy) <- crs(land_reclass)
 
 # read in basemap
 basemap_sf <- ne_countries(
@@ -445,15 +467,23 @@ basemap_sf <- ne_countries(
   scale = "medium", 
   returnclass = "sf") %>% 
   dplyr::select(1) %>% 
-  st_transform(crs = crs(canpoy))
+  st_transform(crs = crs(canpoy)) 
 
 colors <- colorRampPalette(
   colors = c("#85c1c8", "#af4980", "#c0182a", "#d33300", "#e99900", 
              "#ffff00"),
-  bias = 0.25)
+  bias = 0.25) 
 
-plot(canopy, col = colors(100))
+plot(canopy, col = colors(100)) 
 
+tm_shape(canopy) +
+  tm_raster(style = "cont") +
+  tm_shape(filter(sites, species == "Basilisk") %>% st_transform(crs = crs(canopy))) +
+  tm_dots(size = 0.5, col = "blue", border.col = "white") +
+  tm_layout(legend.outside = TRUE,
+            frame = FALSE)
+  
+ 
 ```
 
 # Intro History Map Updates
@@ -461,7 +491,87 @@ plot(canopy, col = colors(100))
 Add original basilisk site to 197# map
 
 ```{r}
-# read in 
+# read in intro sites
+intro_sites <- readxl::read_xlsx("data/introduction_sites.xlsx", sheet = 1) %>% 
+  select(Longitude, Latitude, year = Year, Species)
+
+
+# AGama ------------
+
+# get sites w/ year info
+ag_history <- read_csv("data/agama_occ_mdc.csv") %>% 
+  select(year:Latitude) %>% 
+  bind_rows(filter(intro_sites, Species == "Agama")) %>% 
+  st_as_sf(coords = c("Longitude", "Latitude"), crs = 4326)
+
+#plot specific range of years
+years <- unique(ag_history$year) %>% sort()
+
+p <- vector("list", length = length(years))
+for (i in 1:length(years)) {
+  p[[i]] <- ggplot() +
+    geom_sf(data = mdc,
+                 fill = "lightgrey") +
+    theme(
+      panel.background = element_blank(),
+      axis.title = element_blank(),
+      axis.text = element_blank(),
+      axis.ticks = element_blank(),
+      plot.margin = unit(c(0,01,0.1,0), "lines")
+    ) +
+    geom_sf(
+      data = ag_history[ag_history$year <= years[i], ],
+      # aes(Longitude, Latitude),
+      # inherit.aes = FALSE,
+      shape = 15,
+      colour = "blue"
+    )
+}
+
+library(ggpubr)
+#arrange all together
+ggarrange(p[[1]], p[[2]], p[[3]], p[[4]], p[[5]], p[[6]], p[[7]],
+          p[[8]], p[[9]], p[[10]], p[[11]], p[[12]], p[[13]], p[[14]],
+          p[[15]], p[[16]], p[[17]], p[[18]], p[[19]], p[[20]],
+          nrow = 5, ncol = 4, labels = years[1:20])
+
+
+## basilisk ---------
+# get sites w/ year info
+bas_history <- read_csv("data/basilisk_occ_mdc.csv") %>% 
+  select(year:Latitude) %>% 
+  bind_rows(filter(intro_sites, Species == "Basilisk")) %>% 
+  st_as_sf(coords = c("Longitude", "Latitude"), crs = 4326)
+
+#plot specific range of years
+years <- unique(bas_history$year) %>% sort()
+
+p <- vector("list", length = length(years))
+for (i in 1:length(years)) {
+  p[[i]] <- ggplot() +
+    geom_sf(data = mdc,
+                 fill = "lightgrey") +
+    theme(
+      panel.background = element_blank(),
+      axis.title = element_blank(),
+      axis.text = element_blank(),
+      axis.ticks = element_blank(),
+      plot.margin = unit(c(0,01,0.1,0), "lines")
+    ) +
+    geom_sf(
+      data = bas_history[bas_history$year <= years[i], ],
+      # aes(Longitude, Latitude),
+      # inherit.aes = FALSE,
+      shape = 15,
+      colour = "red"
+    )
+}
+
+#arrange all together
+ggarrange(p[[1]], p[[2]], p[[3]], p[[4]], p[[5]], p[[6]], p[[7]],
+          p[[8]], p[[9]], p[[10]], p[[11]], p[[12]], p[[13]], p[[14]],
+          p[[15]], p[[16]], p[[17]], p[[18]], p[[19]], p[[20]],
+          nrow = 5, ncol = 4, labels = years[1:20])
 
 ```
 
@@ -470,11 +580,11 @@ Add original basilisk site to 197# map
 ```{r}
 ag_kinship <- read_csv("data/agama_kinshipPlink.csv") %>% 
   select(-1) %>% 
-  as.matrix()
+  as.matrix() 
 
-max(ag_kinship[lower.tri(ag_kinship)]) # row 13, col 41
+max(ag_kinship[lower.tri(ag_kinship)]) # row 13, col 41 
 # read in site metadata
-site_meta <- read_csv("data/collection_sites_updated.csv")
+site_meta <- read_csv("data/collection_sites_updated.csv") 
 
 # map the ones with the highest kinship
 site_meta %>% 
