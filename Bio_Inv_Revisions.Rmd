@@ -374,6 +374,122 @@ land_assoc %>%
   )
 ```
 
+# Minor Rev -Landcover Association
+
+Reviewer #3 suggested comparing habitat types of all samples (sites visited) compared to all identified sites (GBIF etc. localities) with a chi square test
+
+### Agamas
+
+```{r}
+# _pts = samples, _all = gbif etc.
+
+#land cover associate for both
+ag_pts_lc <- agama_pts %>% 
+  st_as_sf(coords = c("LONG", "LAT"), crs = 4326) %>% 
+  st_transform(crs = st_crs(land_reclass)) %>% 
+  mutate(landcover = as.numeric(extract(lc, .)[[2]])) %>%
+  left_join(reclass, by = c("landcover" = "SITE")) %>% 
+  st_drop_geometry() %>% 
+  count(NAME_STATE)
+
+ag_all_lc <- ag_all %>% 
+  st_as_sf(coords = c("LONG", "LAT"), crs = 4326) %>% 
+  st_transform(crs = st_crs(land_reclass)) %>% 
+  mutate(landcover = as.numeric(extract(lc, .)[[2]])) %>%
+  left_join(reclass, by = c("landcover" = "SITE")) %>% 
+  st_drop_geometry() %>% 
+  count(NAME_STATE)
+
+# chi square test
+ag_all_lc %>% 
+  rename(all_sites = n) %>% 
+  # try just categories in sampled sites
+  full_join(ag_pts_lc, by = "NAME_STATE") %>% 
+  #right_join(ag_pts_lc, by = "NAME_STATE") %>%
+  rename(sampled_sites = n) %>% 
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>% 
+    # remove categories with less than 5 for both
+  filter(sampled_sites >=5 | all_sites >= 5) %>% 
+  column_to_rownames("NAME_STATE") %>% 
+  data.matrix() %>% 
+  chisq.test()
+
+#significant...but I think that is due to huge sample size differences? (for all cats and just sampled cats)
+## When removing categories that had less than 5 obs for both groups difference is insignificant
+
+# try just comparing percentages
+ag_all_lc %>% 
+  rename(all_sites = n) %>% 
+  full_join(ag_pts_lc, by = "NAME_STATE") %>% 
+  #right_join(ag_pts_lc, by = "NAME_STATE") %>% 
+  rename(sampled_sites = n) %>% 
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>% 
+  mutate(all_sites_pcnt = all_sites/sum(all_sites)*100,
+         sampled_sites_pcnt = sampled_sites/sum(sampled_sites)*100) %>% 
+  select(-c(2:3)) %>% 
+  column_to_rownames("NAME_STATE") %>% 
+  data.matrix() %>% 
+  chisq.test()
+
+# no difference in percentage of sites in each lc category (for both full and just sampled categories)
+
+```
+
+### Basilisks
+
+```{r}
+# _pts = samples, _all = gbif etc.
+
+#land cover associate for both
+bas_pts_lc <- bas_pts %>% 
+  st_as_sf(coords = c("LONG", "LAT"), crs = 4326) %>% 
+  st_transform(crs = st_crs(land_reclass)) %>% 
+  mutate(landcover = as.numeric(extract(lc, .)[[2]])) %>%
+  left_join(reclass, by = c("landcover" = "SITE")) %>% 
+  st_drop_geometry() %>% 
+  count(NAME_STATE)
+
+bas_all_lc <- bas_all %>% 
+  st_as_sf(coords = c("LONG", "LAT"), crs = 4326) %>% 
+  st_transform(crs = st_crs(land_reclass)) %>% 
+  mutate(landcover = as.numeric(extract(lc, .)[[2]])) %>%
+  left_join(reclass, by = c("landcover" = "SITE")) %>% 
+  st_drop_geometry() %>% 
+  count(NAME_STATE)
+
+# chi square test
+bas_all_lc %>% 
+  rename(all_sites = n) %>% 
+  # try just categories in sampled sites
+  full_join(ag_pts_lc, by = "NAME_STATE") %>% 
+  #right_join(bas_pts_lc, by = "NAME_STATE") %>% 
+  rename(sampled_sites = n) %>% 
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>% 
+     # remove categories with less than 5 for both
+  filter(sampled_sites >=5 | all_sites >= 5) %>% 
+  column_to_rownames("NAME_STATE") %>% 
+  data.matrix() %>% 
+  chisq.test()
+
+#different only when considering all sites (even when remove small sample size categories), but not for just sampled sites
+
+# try just comparing percentages
+bas_all_lc %>% 
+  rename(all_sites = n) %>% 
+  full_join(ag_pts_lc, by = "NAME_STATE") %>% 
+  #right_join(bas_pts_lc, by = "NAME_STATE") %>% 
+  rename(sampled_sites = n) %>% 
+  mutate(across(where(is.numeric), ~replace_na(.x, 0))) %>% 
+  mutate(all_sites_pcnt = all_sites/sum(all_sites)*100,
+         sampled_sites_pcnt = sampled_sites/sum(sampled_sites)*100) %>% 
+  select(-c(2:3)) %>% 
+  column_to_rownames("NAME_STATE") %>% 
+  data.matrix() %>% 
+  chisq.test()
+
+# no difference in percentage of sites in each lc category for just sampled categories, but different when considering all categories
+```
+
 # Figure 1 updates
 
 ```{r}
